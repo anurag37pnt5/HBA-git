@@ -9,13 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink {
+                    HomeView()
+                } label: {
+                    Text("Login")
+                }
+                .padding()
+                .font(.headline)
+                .foregroundColor(.blue)
+                .background(Color.white)
+                .padding(.horizontal)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.blue, lineWidth: 2))
+                
+                .padding()
+                
+                NavigationLink {
+                    SignUpView()
+                } label: {
+                    Text("Sign up")
+                }
+                .padding()
+                .font(.headline)
+                .foregroundColor(.blue)
+                .background(Color.white)
+                .padding(.horizontal)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.blue, lineWidth: 2))
+                
+                .padding()
+                .padding()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
